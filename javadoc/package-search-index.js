@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"com.ivanferrerfranco.linktracker","l":"com.ivanferrerfranco.linktracker"},{"m":"com.ivanferrerfranco.linktracker","l":"com.ivanferrerfranco.linktracker.model"},{"m":"com.ivanferrerfranco.linktracker","l":"com.ivanferrerfranco.linktracker.utils"}];updateSearchResults();

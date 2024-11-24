@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ivanferrerfranco.linktracker.FXMLMainViewController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="loadFileMenuItem" mnemonicParsing="false" text="Load File..." onAction="#onLoadFile" />
+                  <MenuItem fx:id="exitMenuItem" mnemonicParsing="false" text="Exit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Process">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#onStartProcess" text="Start" />
+                  <MenuItem mnemonicParsing="false" onAction="#onClear" text="Clear" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="198.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="140.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="262.0" minWidth="10.0" prefWidth="262.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+             <ListView fx:id="listaPaginas" prefHeight="200.0" prefWidth="200.0">
+                 <placeholder>
+                     <Label text="Arrastra aquí un archivo para cargar"
+                            style="-fx-text-fill: gray; -fx-font-style: italic;" />
+                 </placeholder>
+             </ListView>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+               <children>
+                  <Label text="Total Pages" />
+                  <Label text="0" fx:id="totalPagesLabel" />
+                  <Label text="Processed">
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </Label>
+                  <Label text="0" fx:id="processedLabel"/>
+                  <Label text="Total Links">
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </Label>
+                  <Label text="0" fx:id="totalLinksLabel"/>
+               </children>
+               <GridPane.margin>
+                  <Insets top="60.0" />
+               </GridPane.margin>
+            </VBox>
+            <ListView fx:id="listaEnlaces" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" />
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>
